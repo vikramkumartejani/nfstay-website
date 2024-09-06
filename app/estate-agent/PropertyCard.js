@@ -30,10 +30,10 @@ const PropertyCard = () => {
       }}
     >
       {/* Header Text */}
-      <p className="text-primary-color font-[700] text-[20px] leading-[28px]">
+      <p className="text-primary-color font-[700] md:text-[20px] text-[18px] leading-[28px]">
         Your Properties
       </p>
-      <p className="text-primary-color text-[14px] font-[400] leading-[19.6px] opacity-[0.6]">
+      <p className="text-primary-color md:text-[14px] text-[12px] font-[400] leading-[19.6px] opacity-[0.6]">
         Total Properties available
       </p>
 
@@ -55,11 +55,11 @@ const PropertyCard = () => {
         />
         {/* Centered Text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-[40px] tracking-[-1%] font-[700] text-primary-color">
+          <span className="md:text-[40px] text-[30px] tracking-[-1%] font-[700] text-primary-color">
             15
           </span>
           {/* Number */}
-          <span className="text-[14px] font-[500] text-center text-primary-color opacity-[0.5]">
+          <span className="md:text-[14px] text-[12px] font-[500] text-center text-primary-color opacity-[0.5]">
             Properties
             <br /> available
           </span>

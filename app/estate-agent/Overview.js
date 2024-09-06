@@ -14,12 +14,12 @@ const Overview = () => {
             0px 0.72px 2.16px -0.85px #00000012`,
         }}
       >
-        <p class="text-primary-color text-[16px] font-[400] leading-[24px] opacity-[0.7]">
+        <p class="text-primary-color md:text-[16px] text-[14px] font-[400] leading-[24px] opacity-[0.7]">
           Total Revenue
         </p>
-        <h3 className="text-[32px] font-[700] leading-[40px] tracking-[-1%] text-primary-color">
+        <h3 className="md:text-[32px] text-[22px] font-[700] leading-[40px] tracking-[-1%] text-primary-color">
           $14,437
-          <span className="ms-[8px] text-[#27AE60] text-[14px] leading-[19.6px] font-[700] px-[10px] py-[6px] bg-[#27AE601A] rounded-[12px]">
+          <span className="ms-[8px] text-[#27AE60] md:text-[14px] text-[12px] leading-[19.6px] font-[700] px-[10px] py-[6px] bg-[#27AE601A] rounded-[12px]">
             +$235
           </span>
         </h3>
@@ -39,9 +39,9 @@ const Overview = () => {
         <p class="text-primary-color text-[16px] font-[400] leading-[24px] opacity-[0.7]">
           Transactions
         </p>
-        <h3 className="text-[32px] font-[700] leading-[40px] tracking-[-1%] text-primary-color">
+        <h3 className="md:text-[32px] text-[22px] font-[700] leading-[40px] tracking-[-1%] text-primary-color">
           1,915
-          <span className="ms-[8px] text-[#27AE60] text-[14px] leading-[19.6px] font-[700] px-[10px] py-[6px] bg-[#27AE601A] rounded-[12px]">
+          <span className="ms-[8px] text-[#27AE60] md:text-[14px] text-[12px] leading-[19.6px] font-[700] px-[10px] py-[6px] bg-[#27AE601A] rounded-[12px]">
             +20
           </span>
         </h3>
@@ -61,9 +61,9 @@ const Overview = () => {
         <p class="text-primary-color text-[16px] font-[400] leading-[24px] opacity-[0.7]">
           Properties
         </p>
-        <h3 className="text-[32px] font-[700] leading-[40px] tracking-[-1%] text-primary-color">
+        <h3 className="md:text-[32px] text-[22px] font-[700] leading-[40px] tracking-[-1%] text-primary-color">
           784
-          <span className="ms-[8px] text-[#27AE60] text-[14px] leading-[19.6px] font-[700] px-[10px] py-[6px] bg-[#27AE601A] rounded-[12px]">
+          <span className="ms-[8px] text-[#27AE60] md:text-[14px] text-[12px] leading-[19.6px] font-[700] px-[10px] py-[6px] bg-[#27AE601A] rounded-[12px]">
             +236
           </span>
         </h3>
@@ -83,9 +83,9 @@ const Overview = () => {
         <p class="text-primary-color text-[16px] font-[400] leading-[24px] opacity-[0.7]">
           Profit Generated
         </p>
-        <h3 className="text-[32px] font-[700] leading-[40px] tracking-[-1%] text-primary-color">
+        <h3 className="md:text-[32px] text-[22px] font-[700] leading-[40px] tracking-[-1%] text-primary-color">
           90%
-          <span className="ms-[8px] text-[#F06565] text-[14px] leading-[19.6px] font-[700] px-[10px] py-[6px] bg-[#FDF7F7] rounded-[12px]">
+          <span className="ms-[8px] text-[#F06565] md:text-[14px] text-[12px] leading-[19.6px] font-[700] px-[10px] py-[6px] bg-[#FDF7F7] rounded-[12px]">
             -3%
           </span>
         </h3>

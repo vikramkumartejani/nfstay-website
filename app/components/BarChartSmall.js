@@ -141,20 +141,20 @@ const BarChartSmall = () => {
       `,
       }}
     >
-      <h1 className="text-[18px] font-[400] leading-[26.1px] tracking-[-0.5%] text-primary-color opacity-[0.7] mb-[8px]">
+      <h1 className="md:text-[18px] text-[16px] font-[400] leading-[26.1px] tracking-[-0.5%] text-primary-color opacity-[0.7] mb-[8px]">
         Monthly Revenue
       </h1>
       <div className="flex justify-between flex-wrap gap-5">
-        <div className="text-[32px] font-[700] leading-[40.32px] tracking-[-2%] text-primary-color">
+        <div className="md:text-[32px] text-[24px] font-[700] leading-[40.32px] tracking-[-2%] text-primary-color">
           $5,800
-          <span className="ms-[8px] text-[#27AE60] text-[14px] leading-[19.6px] font-[700] px-[10px] py-[6px] bg-[#27AE601A] rounded-[12px]">
+          <span className="ms-[8px] text-[#27AE60] md:text-[14px] text-[12px] md:leading-[19.6px] font-[700] px-[10px] py-[6px] bg-[#27AE601A] rounded-[12px]">
             +10.6%
           </span>
         </div>
         <div className="flex gap-[10px]">
           <button
             onClick={() => handleClick("D")}
-            className={`text-[14px] font-[500] leading-[19.6px] w-[34px] h-[34px] rounded-full ${
+            className={`md:text-[14px] text-[12px] font-[500] leading-[19.6px] w-[34px] h-[34px] rounded-full ${
               activeButton === "D"
                 ? "text-white bg-[#954AFC]"
                 : "text-primary-color opacity-[0.5]"
@@ -164,7 +164,7 @@ const BarChartSmall = () => {
           </button>
           <button
             onClick={() => handleClick("W")}
-            className={`text-[14px] font-[500] leading-[19.6px] w-[34px] h-[34px] rounded-full ${
+            className={`md:text-[14px] text-[12px] font-[500] leading-[19.6px] w-[34px] h-[34px] rounded-full ${
               activeButton === "W"
                 ? "text-white bg-[#954AFC]"
                 : "text-primary-color opacity-[0.5]"
@@ -174,7 +174,7 @@ const BarChartSmall = () => {
           </button>
           <button
             onClick={() => handleClick("M")}
-            className={`text-[14px] font-[500] leading-[19.6px] w-[34px] h-[34px] rounded-full ${
+            className={`md:text-[14px] text-[12px] font-[500] leading-[19.6px] w-[34px] h-[34px] rounded-full ${
               activeButton === "M"
                 ? "text-white bg-[#954AFC]"
                 : "text-primary-color opacity-[0.5]"
@@ -184,7 +184,7 @@ const BarChartSmall = () => {
           </button>
           <button
             onClick={() => handleClick("Y")}
-            className={`text-[14px] font-[500] leading-[19.6px] w-[34px] h-[34px] rounded-full ${
+            className={`md:text-[14px] text-[12px] font-[500] leading-[19.6px] w-[34px] h-[34px] rounded-full ${
               activeButton === "Y"
                 ? "text-white bg-[#954AFC]"
                 : "text-primary-color opacity-[0.5]"
