@@ -5,6 +5,7 @@ import PropertyCard from "./PropertyCard";
 import BarChartSmall from "../components/BarChartSmall";
 import PropertyDashboard from "./PropertyDashboard";
 import RecentTransaction from "./RecentTransaction";
+import BarChart from "../components/BarChart";
 
 const page = () => {
   return (
@@ -14,7 +15,7 @@ const page = () => {
         <section className="flex md:flex-row flex-col gap-[20px]">
           <PropertyCard />
           <div className="md:w-[70%] md:h-[329px]">
-            <BarChartSmall />
+            <BarChart small={true} />
           </div>
         </section>
         <section className="flex md:flex-row flex-col gap-[20px]">

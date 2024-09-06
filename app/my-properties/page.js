@@ -17,7 +17,7 @@ const page = () => {
           </p>
         </div>
 
-        <BarChart />
+        <BarChart small={false} />
 
         <YourProperties />
       </div>

@@ -12,7 +12,7 @@ import {
 // Register necessary components with ChartJS
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 
-const BarChart = () => {
+const BarChart = ({ small }) => {
   const [activeButton, setActiveButton] = useState("M"); // Default active button
 
   const handleClick = (button) => {
@@ -27,7 +27,7 @@ const BarChart = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 900) {
-        setBarThickness(50);
+        setBarThickness(small ? 45 : 50);
       } else if (window.innerWidth > 500) {
         setBarThickness(30);
       } else {
@@ -131,7 +131,9 @@ const BarChart = () => {
 
   return (
     <section
-      className="min-h-[352px] bg-white rounded-lg md:px-[20px] px-[10px] py-[20px] mb-[50px]"
+      className={` ${
+        small ? "h-full" : "min-h-[352px]"
+      }  bg-white rounded-lg md:px-[20px] px-[10px] py-[20px] mb-[50px]`}
       style={{
         boxShadow: `
         0px 18.1px 54.29px -3.39px #00000006,
@@ -194,7 +196,7 @@ const BarChart = () => {
           </button>
         </div>
       </div>
-      <div className="mt-4 w-full h-[200px]">
+      <div className={`mt-4 w-full ${small ? "h-[178px]" : "h-[200px]"}`}>
         <Bar data={data} options={options} />
       </div>
     </section>
