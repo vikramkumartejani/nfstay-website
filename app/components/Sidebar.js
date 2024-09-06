@@ -24,7 +24,7 @@ const Sidebar = () => {
           icon: "/assets/settings.svg",
         },
         {
-          href: "/Docs",
+          href: "/docs",
           label: "Docs",
           icon: "/assets/docs.svg",
         },
