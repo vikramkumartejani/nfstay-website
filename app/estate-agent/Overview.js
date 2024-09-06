@@ -2,7 +2,7 @@ import React from "react";
 
 const Overview = () => {
   return (
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pb-[25px]">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[25px]">
       {/* Card 1: Total Revenue */}
       <div
         class="bg-white p-[25px] rounded-[14px]"
