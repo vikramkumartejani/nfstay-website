@@ -1,7 +1,24 @@
+"use client";
 import Image from "next/image";
+import Confetti from "react-confetti";
+import { useState, useEffect } from "react";
 
 const CongratulationModal = ({ isOpen, onClose }) => {
+  const [isConfettiActive, setIsConfettiActive] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsConfettiActive(true);
+      const timer = setTimeout(() => {
+        setIsConfettiActive(false);
+      }, 6000);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
+
+  const { innerWidth: width, innerHeight: height } = window;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-[10px]">
@@ -34,6 +51,21 @@ const CongratulationModal = ({ isOpen, onClose }) => {
           </button>
         </div>
       </div>
+      {/* Container for Confetti */}
+      {isConfettiActive && (
+        <div className="absolute inset-0 -top-[10%] flex items-end justify-center pointer-events-none z-[9999]">
+          <Confetti
+            width={width}
+            height={height}
+            numberOfPieces={200}
+            recycle={false}
+            gravity={0.3} // Adjust gravity to control the speed of falling
+            initialVelocityX={{ min: -20, max: 20 }} // Burst effect in horizontal direction
+            initialVelocityY={{ min: -15, max: -20 }} // Burst effect in vertical direction
+            confettiSource={{ x: width / 2, y: height / 2 }} // Center of the screen
+          />
+        </div>
+      )}
     </div>
   );
 };

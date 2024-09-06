@@ -15,7 +15,6 @@ const Header = () => {
 
   const pathname = usePathname();
 
-
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const notificationRef = useRef(null);
 
@@ -24,23 +23,25 @@ const Header = () => {
   };
 
   const handleClickOutside = (event) => {
-    if (notificationRef.current && !notificationRef.current.contains(event.target)) {
+    if (
+      notificationRef.current &&
+      !notificationRef.current.contains(event.target)
+    ) {
       setIsNotificationOpen(false);
     }
   };
 
   useEffect(() => {
     if (isNotificationOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     } else {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isNotificationOpen]);
- 
 
   const sidebarLinks = [
     {
@@ -154,7 +155,7 @@ const Header = () => {
       </div>
 
       <div className="flex items-center gap-5">
-        <Link href='/settings'>
+        <Link href="/settings">
           <Image
             src="/assets/icons/setting-icon.svg"
             alt="setting-icon"
@@ -173,7 +174,10 @@ const Header = () => {
           </button>
           {/* notification */}
           {isNotificationOpen && (
-            <div ref={notificationRef} className="notification z-40 w-[320px] sm:w-[390px] absolute top-14 sm:-right-14 -right-40 py-[22px] px-[24px] border border-[#00000026]">
+            <div
+              ref={notificationRef}
+              className="notification z-[99999] w-[320px] sm:w-[390px] absolute top-14 sm:-right-14 -right-40 py-[22px] px-[24px] border border-[#00000026]"
+            >
               <Notification />
             </div>
           )}
@@ -192,8 +196,9 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-[100px] left-0 w-full h-full overflow-scroll bg-white shadow-lg flex-col flex transform py-6 pb-72 px-4 ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-          } transition-transform duration-500 ease-in-out z-50`}
+        className={`fixed top-[100px] left-0 w-full h-full overflow-scroll bg-white shadow-lg flex-col flex transform py-6 pb-72 px-4 ${
+          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-500 ease-in-out z-50`}
       >
         <div className="mb-6 flex items-center gap-3">
           <Image src="/assets/Logo.svg" alt="avatar" width={149} height={32} />

@@ -144,6 +144,20 @@ const CheckoutModal = ({ isOpen, onClose, onBuyNow }) => {
                 </span>
               </button>
             </div>
+            <div className="flex mt-[15px]">
+              <div className="w-full h-[23px] flex space-x-[-9px]">
+                <img className="h-full" src="/assets/icons/master-card.svg" />
+                <img className="h-full" src="/assets/icons/visa.svg" />
+                <img
+                  className="h-full"
+                  src="/assets/icons/american-express.svg"
+                />
+              </div>
+              <div className="w-full h-[21px] flex space-x-[-9px]">
+                <img className="h-full" src="/assets/icons/usdt-btc.svg" />
+                <img className="h-full" src="/assets/icons/coin.svg" />
+              </div>
+            </div>
           </div>
         </div>
         <div className="flex flex-wrap gap-[20px] justify-between items-center sm:mt-[40px] mt-[20px]">
