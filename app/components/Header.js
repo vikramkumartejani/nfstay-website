@@ -138,7 +138,7 @@ const Header = () => {
       title: "Join the team",
       links: [
         {
-          href: "/Estate Agent",
+          href: "/estate-agent",
           label: "Estate Agent",
           icon: "/assets/icons/sidebar-14.svg",
         },
