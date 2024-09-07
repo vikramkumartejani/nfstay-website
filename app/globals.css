@@ -150,3 +150,14 @@ input:checked + .toggleSwitch::before {
     0px 5.776px 17.327px -2.545px rgba(0, 0, 0, 0.06),
     0px 18.098px 54.294px -3.393px rgba(0, 0, 0, 0.02);
 }
+
+.test-gradient-button {
+  position: relative;
+  z-index: 10;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 15px;
+  background: linear-gradient(90.57deg, rgba(153, 69, 255, 0.2) 0%, rgba(32, 225, 159, 0.2) 100%);
+  color: #0C0839;
+  cursor: pointer;
+}

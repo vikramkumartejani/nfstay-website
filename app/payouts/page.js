@@ -111,9 +111,8 @@ const Payouts = () => {
                 {payouts.map((payout, index) => (
                   <tr
                     key={index}
-                    className={`border-[#0C0839] text-nowrap border-opacity-[0.2] ${
-                      index !== payouts.length - 1 ? "border-b" : ""
-                    }`}
+                    className={`border-[#0C0839] text-nowrap border-opacity-[0.2] ${index !== payouts.length - 1 ? "border-b" : ""
+                      }`}
                   >
                     <td className="font-semibold text-[12px] md:text-[14px] leading-[23px] text-[#0C0839] py-[20px] flex items-center">
                       <img
@@ -149,31 +148,9 @@ const Payouts = () => {
                       </div>
                     </td>
                     <td className="font-semibold text-[12px] leading-[23px] text-primary-color px-[12px] md:px-[23px] py-[20px] text-center">
-                      <div className="relative inline-block rounded-[6px]">
-                        {/* Gradient border wrapper */}
-                        <div
-                          className="absolute inset-0 rounded-[6px] border-[1px] border-transparent"
-                          style={{
-                            borderImage:
-                              "linear-gradient(90.69deg, #9945FF -0.25%, #20E19F 100%) 1", // Gradient border
-                            borderRadius: "6px",
-                            zIndex: "0", // Ensure it’s behind the button
-                            pointerEvents: "none", // Prevent interaction
-                          }}
-                        />
-                        {/* Button with gradient background */}
-                        <button
-                          className="relative z-10 rounded-[6px] px-[15px] py-[5px] text-primary-color"
-                          style={{
-                            background:
-                              "linear-gradient(90.57deg, rgba(153, 69, 255, 0.2) 0%, rgba(32, 225, 159, 0.2) 100%)",
-                            border: "none", // No border on button itself
-                            borderRadius: "6px",
-                          }}
-                        >
-                          Claim & Reinvest
-                        </button>
-                      </div>
+                      <button className="test-gradient-button">
+                        Claim & Reinvest
+                      </button>
                     </td>
 
                     <td className="font-semibold text-[12px] leading-[23px] text-white px-[12px] md:px-[23px] py-[20px] text-center">
