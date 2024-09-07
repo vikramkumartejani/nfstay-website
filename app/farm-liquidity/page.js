@@ -4,6 +4,7 @@ import Image from "next/image";
 import SideContent from "./SideContent";
 import Graph from "./Graph";
 import BuyStayCard from "./BuyStayCard";
+import Incinerator from "./Incinerator";
 
 const FarmLiquidity = () => {
   return (
@@ -14,7 +15,7 @@ const FarmLiquidity = () => {
             <h1 className="text-[#0C0839] text-[30px] font-bold tracking-[-0.64px]">
               Farm
             </h1>
-            <h3 className="text-[#0C0839] leading-[27px] font-medium text-[18px] opacity-50">
+            <h3 className="text-[#0C0839] leading-[27px] font-medium md:text-[18px] text-[16px] opacity-50">
               Earn $STAY by providing liquidity
             </h3>
           </div>
@@ -27,10 +28,10 @@ const FarmLiquidity = () => {
                 height={22}
               />
               <div className="mt-[-5px]">
-                <h2 className="text-[#0C0839] text-[24px] leading-[32px] font-semibold">
+                <h2 className="text-[#0C0839] md:text-[24px] text-[20px] leading-[32px] font-semibold">
                   0.00$
                 </h2>
-                <h3 className="text-[#0C0839] text-[16px] leading-[21px] font-medium opacity-50">
+                <h3 className="text-[#0C0839] md:text-[16px] text-[14px] leading-[21px] font-medium opacity-50">
                   Your Liquidity
                 </h3>
               </div>
@@ -43,10 +44,10 @@ const FarmLiquidity = () => {
                 height={22}
               />
               <div className="mt-[-5px]">
-                <h2 className="text-[#0C0839] text-[24px] leading-[32px] font-semibold">
+                <h2 className="text-[#0C0839] md:text-[24px] text-[20px] leading-[32px] font-semibold">
                   93.52%
                 </h2>
-                <h3 className="text-[#0C0839] text-[16px] leading-[21px] font-medium opacity-50">
+                <h3 className="text-[#0C0839] md:text-[16px] text-[14px] leading-[21px] font-medium opacity-50">
                   APR
                 </h3>
               </div>
@@ -59,10 +60,10 @@ const FarmLiquidity = () => {
                 height={22}
               />
               <div className="mt-[-5px]">
-                <h2 className="text-[#0C0839] text-[24px] leading-[32px] font-semibold">
+                <h2 className="text-[#0C0839] md:text-[24px] text-[20px] leading-[32px] font-semibold">
                   $0.00
                 </h2>
-                <h3 className="text-[#0C0839] text-[16px] leading-[21px] font-medium opacity-50">
+                <h3 className="text-[#0C0839] md:text-[16px] text-[14px] leading-[21px] font-medium opacity-50">
                   Unclaimed Rewards
                 </h3>
               </div>
@@ -70,20 +71,19 @@ const FarmLiquidity = () => {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <Image
+          <img
+            className="md:w-[62px] w-[50px]"
             src="/assets/icons/usdt-btc.svg"
             alt="usdt-btc"
-            width={62}
-            height={41}
           />
-          <h2 className="text-[#0C0839] text-[24px] leading-[30px] tracking-[-0.02em] font-bold">
+          <h2 className="text-[#0C0839] md:text-[24px] text-[20px] leading-[30px] tracking-[-0.02em] font-bold">
             USDT/BTC
           </h2>
         </div>
         <div className="flex items-start md:flex-row flex-col justify-between gap-6">
           <div className="mt-10 w-full">
             <div className="flex items-end gap-2">
-              <h2 className="text-[#0C0839] text-[30px] sm:text-[35px] xl:text-[44px] leading-[50.44px] tracking-[-0.02em] font-bold">
+              <h2 className="text-[#0C0839] xl:text-[44px] lg:text-[35px] md:text-[30px] sm:text-[25px] text-[24px] md:leading-[50.44px] tracking-[-0.02em] font-bold">
                 63.125 USDT/ BTC
               </h2>
               <span className="text-[#0C0839] text-opacity-70 text-[16px] leading-[28px] font-medium">
@@ -117,7 +117,7 @@ const FarmLiquidity = () => {
                 </div>
               </div>
               <div>
-                <h2 className="text-[#0C0839] text-[26px] leading-[32px] tracking-[-0.02em] font-semibold">
+                <h2 className="text-[#0C0839] md:text-[26px] text-[22px] leading-[32px] tracking-[-0.02em] font-semibold">
                   $181M
                 </h2>
                 <h4 className="mt-1 text-[#0C0839] text-[14px] leading-[27px] font-semibold opacity-50">
@@ -125,7 +125,7 @@ const FarmLiquidity = () => {
                 </h4>
               </div>
               <div>
-                <h2 className="text-[#0C0839] text-[26px] leading-[32px] tracking-[-0.02em] font-semibold">
+                <h2 className="text-[#0C0839] md:text-[26px] text-[22px] leading-[32px] tracking-[-0.02em] font-semibold">
                   $381M
                 </h2>
                 <h4 className="mt-1 text-[#0C0839] text-[14px] leading-[27px] font-semibold opacity-50">
@@ -133,7 +133,7 @@ const FarmLiquidity = () => {
                 </h4>
               </div>
               <div>
-                <h2 className="text-[#0C0839] text-[26px] leading-[32px] tracking-[-0.02em] font-semibold">
+                <h2 className="text-[#0C0839] md:text-[26px] text-[22px] leading-[32px] tracking-[-0.02em] font-semibold">
                   3.91%
                 </h2>
                 <h4 className="mt-1 text-[#0C0839] text-[14px] leading-[27px] font-semibold opacity-50">
@@ -156,6 +156,8 @@ const FarmLiquidity = () => {
             buyingInfo={true}
           />
         </div>
+
+        <Incinerator />
       </div>
     </DashboardLayout>
   );

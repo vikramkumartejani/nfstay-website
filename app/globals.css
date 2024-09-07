@@ -157,7 +157,23 @@ input:checked + .toggleSwitch::before {
   border: none;
   border-radius: 6px;
   padding: 5px 15px;
-  background: linear-gradient(90.57deg, rgba(153, 69, 255, 0.2) 0%, rgba(32, 225, 159, 0.2) 100%);
-  color: #0C0839;
+  background: linear-gradient(
+    90.57deg,
+    rgba(153, 69, 255, 0.2) 0%,
+    rgba(32, 225, 159, 0.2) 100%
+  );
+  color: #0c0839;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1228px) {
+  .fire-div {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 443px) {
+  .payment-cards {
+    flex-direction: column;
+  }
 }

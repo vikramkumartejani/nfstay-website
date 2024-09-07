@@ -1,23 +1,72 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MdInfoOutline } from "react-icons/md";
-import { FaDollarSign, FaChevronDown } from "react-icons/fa";
+import { IoIosArrowDown } from "react-icons/io";
 
 const BuyStayCard = ({ buttonText, cardsLogo, buyingInfo }) => {
-  const [isOpen, setIsOpen] = useState(false); // Manage dropdown open/close state
-  const [selectedCurrency, setSelectedCurrency] = useState("USD"); // Default selected currency
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [selectedCurrency1, setSelectedCurrency1] = useState(
+    cardsLogo ? "USD" : "usdc"
+  );
+  const [selectedCurrencyIcon1, setSelectedCurrencyIcon1] = useState(
+    cardsLogo ? "/assets/icons/usd.svg" : "/assets/icons/usdc.svg"
+  );
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [selectedCurrency2, setSelectedCurrency2] = useState("STAY");
+  const [selectedCurrencyIcon2, setSelectedCurrencyIcon2] = useState(
+    "/assets/icons/stay.svg"
+  );
+  const dropdown1Ref = useRef(null);
+  const dropdown2Ref = useRef(null);
 
-  const currencies = [
-    { symbol: "$", code: "USD" },
-    { symbol: "€", code: "EUR" },
-    { symbol: "£", code: "GBP" },
+  // Close both dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        dropdown1Ref.current &&
+        !dropdown1Ref.current.contains(event.target)
+      ) {
+        setIsOpen1(false); // Close the first dropdown
+      }
+      if (
+        dropdown2Ref.current &&
+        !dropdown2Ref.current.contains(event.target)
+      ) {
+        setIsOpen2(false); // Close the second dropdown
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const currencies1 = [
+    { icon: "/assets/icons/usd.svg", code: "USD" },
+    { icon: "/assets/icons/usdc.svg", code: "usdc" },
+    { icon: "/assets/icons/coin.svg", code: "usdt" },
   ];
 
-  const handleCurrencySelect = (currency) => {
-    setSelectedCurrency(currency);
-    setIsOpen(false); // Close dropdown on selection
+  const currencies2 = [
+    { icon: "/assets/icons/stay.svg", code: "STAY" },
+    { icon: "/assets/icons/stay.svg", code: "STAY2" },
+    { icon: "/assets/icons/stay.svg", code: "STAY3" },
+  ];
+
+  const handleCurrencySelect1 = (currency, icon) => {
+    setSelectedCurrency1(currency);
+    setSelectedCurrencyIcon1(icon);
+    setIsOpen1(false); // Close dropdown on selection
   };
+
+  const handleCurrencySelect2 = (currency, icon) => {
+    setSelectedCurrency2(currency);
+    setSelectedCurrencyIcon2(icon);
+    setIsOpen2(false); // Close dropdown on selection
+  };
+
   return (
     <div
       className="bg-white p-[24px] rounded-[14px] w-full"
@@ -45,9 +94,9 @@ const BuyStayCard = ({ buttonText, cardsLogo, buyingInfo }) => {
       </div>
 
       {/* Payment Cards Section */}
-      <div className="flex justify-between items-center gap-[20px] mb-6">
+      <div className="payment-cards flex justify-between items-center gap-[20px] mb-6">
         {/* You're Paying */}
-        <div className="bg-[#20E19F33] rounded-[12px] p-[16px] w-full">
+        <div className="bg-[#20E19F33] rounded-[12px] p-[16px] w-full min-w-[149px]">
           <div className="flex justify-between items-center mb-[15px]">
             <p className="md:text-[14px] text-[12px] font-[700] leading-[24px]">
               You're Paying
@@ -56,14 +105,59 @@ const BuyStayCard = ({ buttonText, cardsLogo, buyingInfo }) => {
               <MdInfoOutline className="text-primary-color w-[19px] h-[19px]" />
             )}
           </div>
-          <div className="text-[30px] font-[700] text-primary-color mb-[18px] opacity-[0.2]">
-            0
-          </div>
-          <div className="flex items-center justify-between">
-            <button className="bg-white px-4 py-2 rounded-lg flex items-center space-x-2">
-              <span className="text-purple-500 font-semibold">$</span>
-              <span className="text-gray-700">USD</span>
-            </button>
+          <input
+            className="text-[30px] font-[700] w-full outline-none bg-transparent text-primary-color placeholder:text-primary-color mb-[18px] placeholder:opacity-[0.2] text-opacity-[0.6]"
+            type="number"
+            placeholder="0"
+          />
+
+          <div ref={dropdown1Ref} className="relative w-full">
+            {/* Dropdown Trigger */}
+            <div
+              className="bg-[#1FE09D33] rounded-[12px] flex items-center justify-between px-[10px] py-[5px] cursor-pointer"
+              onClick={() => setIsOpen1(!isOpen1)}
+            >
+              {/* Left Icon and Selected Currency */}
+              <div className="flex items-center gap-[4px]">
+                <div className="flex items-center justify-center w-[20px] h-[20px]">
+                  <img src={selectedCurrencyIcon1} alt="icon" />
+                </div>
+                <span className="text-[14px] uppercase font-[700] leading-[24px] text-primary-color">
+                  {selectedCurrency1}
+                </span>
+              </div>
+
+              {/* Dropdown Arrow */}
+              <IoIosArrowDown
+                className={`text-primary-color w-[16px] h-[16px] transform ${
+                  isOpen1 ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </div>
+
+            {/* Dropdown Menu */}
+            {isOpen1 && (
+              <div className="absolute z-10 bg-white shadow-md rounded-[12px] mt-2 w-full">
+                <ul>
+                  {currencies1.map((currency) => (
+                    <li
+                      key={currency.code}
+                      className="flex items-center px-[10px] py-[4px] gap-[4px] hover:bg-[#9A47FF1A] cursor-pointer"
+                      onClick={() =>
+                        handleCurrencySelect1(currency.code, currency.icon)
+                      }
+                    >
+                      <div className="flex items-center justify-center w-[20px] h-[20px]">
+                        <img src={currency.icon} alt="icon" />
+                      </div>
+                      <span className="text-[14px] uppercase font-[700] leading-[24px] text-primary-color">
+                        {currency.code}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
 
@@ -73,7 +167,7 @@ const BuyStayCard = ({ buttonText, cardsLogo, buyingInfo }) => {
         </div>
 
         {/* You're Buying */}
-        <div className="bg-[#9A47FF1A] rounded-[12px] p-[16px] w-full">
+        <div className="bg-[#9A47FF1A] rounded-[12px] p-[16px] w-full min-w-[149px]">
           <div className="flex justify-between items-center mb-2">
             <p className="md:text-[14px] text-[12px] font-[700] leading-[24px]">
               You're buying
@@ -85,51 +179,54 @@ const BuyStayCard = ({ buttonText, cardsLogo, buyingInfo }) => {
           <div className="text-[30px] font-[700] text-primary-color mb-[18px] opacity-[0.2]">
             0.00
           </div>
-          <div className="flex items-center justify-between">
-            <div className="relative w-full max-w-[200px]">
-              {/* Dropdown Trigger */}
-              <div
-                className="bg-teal-100 rounded-[12px] flex items-center justify-between p-4 cursor-pointer"
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                {/* Left Icon and Selected Currency */}
-                <div className="flex items-center space-x-2">
-                  <div className="bg-purple-500 p-2 rounded-full flex items-center justify-center">
-                    <FaDollarSign className="text-white w-4 h-4" />
-                  </div>
-                  <span className="text-lg font-bold text-gray-900">
-                    {selectedCurrency}
-                  </span>
-                </div>
 
-                {/* Dropdown Arrow */}
-                <FaChevronDown
-                  className={`text-gray-900 w-4 h-4 transform ${
-                    isOpen ? "rotate-180" : "rotate-0"
-                  }`}
-                />
+          <div ref={dropdown2Ref} className="relative w-full">
+            {/* Dropdown Trigger */}
+            <div
+              className="bg-[#9A47FF33] rounded-[12px] flex items-center justify-between px-[10px] py-[5px] cursor-pointer"
+              onClick={() => setIsOpen2(!isOpen2)}
+            >
+              {/* Left Icon and Selected Currency */}
+              <div className="flex items-center gap-[4px]">
+                <div className="flex items-center justify-center w-[20px] h-[20px]">
+                  <img src={selectedCurrencyIcon2} alt="icon" />
+                </div>
+                <span className="text-[14px] uppercase font-[700] leading-[24px] text-primary-color">
+                  {selectedCurrency2}
+                </span>
               </div>
 
-              {/* Dropdown Menu */}
-              {isOpen && (
-                <div className="absolute z-10 bg-white shadow-md rounded-[12px] mt-2 w-full">
-                  <ul>
-                    {currencies.map((currency) => (
-                      <li
-                        key={currency.code}
-                        className="flex items-center p-3 hover:bg-teal-50 cursor-pointer"
-                        onClick={() => handleCurrencySelect(currency.code)}
-                      >
-                        <div className="bg-purple-500 p-2 rounded-full flex items-center justify-center mr-2">
-                          <span className="text-white">{currency.symbol}</span>
-                        </div>
-                        <span className="text-gray-900">{currency.code}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              {/* Dropdown Arrow */}
+              <IoIosArrowDown
+                className={`text-primary-color w-[16px] h-[16px] transform ${
+                  isOpen2 ? "rotate-180" : "rotate-0"
+                }`}
+              />
             </div>
+
+            {/* Dropdown Menu */}
+            {isOpen2 && (
+              <div className="absolute z-10 bg-white shadow-md rounded-[12px] mt-2 w-full">
+                <ul>
+                  {currencies2.map((currency) => (
+                    <li
+                      key={currency.code}
+                      className="flex items-center px-[10px] py-[4px] gap-[4px] hover:bg-[#9A47FF1A] cursor-pointer"
+                      onClick={() =>
+                        handleCurrencySelect2(currency.code, currency.icon)
+                      }
+                    >
+                      <div className="flex items-center justify-center w-[20px] h-[20px]">
+                        <img src={currency.icon} alt="icon" />
+                      </div>
+                      <span className="text-[14px] uppercase font-[700] leading-[24px] text-primary-color">
+                        {currency.code}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </div>
