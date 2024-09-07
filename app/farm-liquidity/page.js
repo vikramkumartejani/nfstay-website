@@ -3,6 +3,7 @@ import DashboardLayout from "../components/DashboardLayout";
 import Image from "next/image";
 import SideContent from "./SideContent";
 import Graph from "./Graph";
+import BuyStayCard from "./BuyStayCard";
 
 const FarmLiquidity = () => {
   return (
@@ -142,6 +143,18 @@ const FarmLiquidity = () => {
             </div>
           </div>
           <SideContent />
+        </div>
+        <div className="flex md:flex-row flex-col gap-[19px] my-[30px]">
+          <BuyStayCard
+            buttonText={"Buy with Flat"}
+            cardsLogo={true}
+            buyingInfo={false}
+          />
+          <BuyStayCard
+            buttonText={"Swap Now"}
+            cardsLogo={false}
+            buyingInfo={true}
+          />
         </div>
       </div>
     </DashboardLayout>
