@@ -152,6 +152,16 @@ const Header = () => {
         <button onClick={toggleMobileMenu} className="lg:hidden block">
           <IoMenu className="w-[35px] h-[35px]" />
         </button>
+        {pathname === "/details" && (
+          <Link href="/dashboard">
+            <Image
+              src="/assets/Logo.svg"
+              alt="avatar"
+              width={149}
+              height={32}
+            />
+          </Link>
+        )}
       </div>
 
       <div className="flex items-center gap-5">
