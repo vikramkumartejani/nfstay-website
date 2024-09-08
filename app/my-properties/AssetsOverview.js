@@ -1,7 +1,9 @@
+import { FiHome } from "react-icons/fi";
+
 export default function AssetsOverview() {
   return (
     <div
-      className="bg-white p-6 rounded-[14px] flex-grow"
+      className="bg-white rounded-[14px] flex-grow lg:w-auto w-full"
       style={{
         boxShadow: `
       0px 18.1px 54.29px -3.39px #00000006,
@@ -12,118 +14,179 @@ export default function AssetsOverview() {
       }}
     >
       {/* Header */}
-      <h2 className="text-xl font-bold text-gray-800 mb-4">Assets Overview</h2>
+      <h2 className="flex gap-[4px] items-center justify-between sm:text-[24px] text-[20px] leading-[40.32px] tracking-[-2%] font-[700] text-primary-color pt-[25px] pb-[25px] md:px-[20px] px-[12px] border-b border-b-[#0C0839] border-opacity-[0.2]">
+        Assets Overview
+      </h2>
 
       {/* Properties Section */}
-      <div className="py-4 border-b">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            {/* Icon */}
-            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-green-500 rounded-full flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="white"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8 10V4a1 1 0 011-1h6a1 1 0 011 1v6m-9 10h12a1 1 0 001-1v-6a1 1 0 00-1-1H7a1 1 0 00-1 1v6a1 1 0 001 1z"
-                />
-              </svg>
-            </div>
-            {/* Text */}
-            <div>
-              <h3 className="text-sm font-semibold text-gray-800">
-                Properties
-              </h3>
-              <p className="text-xs text-purple-600">Current Price: $501</p>
-            </div>
-          </div>
-          {/* Amount */}
-          <div className="text-right">
-            <h3 className="text-lg font-bold text-gray-800">$27,4433.87</h3>
-            <p className="text-xs text-gray-400">Amount: 32,236.77</p>
-          </div>
-        </div>
-        {/* Progress Bar */}
-        <div className="relative pt-2">
-          <div className="overflow-hidden h-2 text-xs flex rounded bg-gray-200">
-            <div
-              style={{ width: "53%" }}
-              className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-600"
-            ></div>
-          </div>
-          <div className="text-sm text-gray-400 mt-2">53%</div>
-        </div>
-      </div>
+      <div className="md:px-[25px] px-[12px] py-[30px]">
+        <div className="border-b border-b-[#A0A3AA] pb-[40px]">
+          <div className="flex justify-between items-center">
+            <div className="flex items-start gap-[10px] w-full">
+              {/* Icon */}
+              <div className="min-w-[42px] min-h-[42px] w-[42px] h-[42px] text-white bg-custom-one rounded-full flex items-center justify-center">
+                <FiHome size={24} />
+              </div>
+              {/* Text */}
+              <div className="flex flex-col w-full">
+                <div className="flex flex-wrap gap-[4px] justify-between items-center">
+                  <div>
+                    <div className="flex items-center gap-[6px]">
+                      <h3 className="text-[18px] leading-[22.68px] font-[600] text-primary-color">
+                        Properties
+                      </h3>
+                      <span className="bg-[#0C083917] rounded-full">
+                        <p className="text-[12px] leading-[15.12px] py-[6px] px-[10px] font-[500] text-[#01060F]">
+                          4.33 stacked
+                        </p>
+                      </span>
+                    </div>
+                    <p className="md:text-[14px] text-[12px] leading-[17.64px] font-[500] text-[#9945FF] mt-[8px]">
+                      Current Price: $501
+                    </p>
+                  </div>
 
-      {/* LP Token Section */}
-      <div className="py-4 border-b">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            {/* Icon */}
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-              {/* Token Icon Placeholder */}
-              <span className="text-white font-bold">LP</span>
-            </div>
-            {/* Text */}
-            <div>
-              <h3 className="text-sm font-semibold text-gray-800">LP Token</h3>
-              <p className="text-xs text-purple-600">Current Price: $2.18</p>
-            </div>
-          </div>
-          {/* Amount */}
-          <div className="text-right">
-            <h3 className="text-lg font-bold text-gray-800">$0</h3>
-            <p className="text-xs text-gray-400">Amount: 0</p>
-          </div>
-        </div>
-        {/* Progress Bar */}
-        <div className="relative pt-2">
-          <div className="overflow-hidden h-2 text-xs flex rounded bg-gray-200">
-            <div
-              style={{ width: "0%" }}
-              className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-600"
-            ></div>
-          </div>
-          <div className="text-sm text-gray-400 mt-2">0%</div>
-        </div>
-      </div>
+                  {/* Amount */}
+                  <div className="sm:text-right">
+                    <h3 className="md:text-[20px] text-[18px] font-[700] leading-[26.46px] text-[#01060F]">
+                      $27,4433.87
+                    </h3>
+                    <p className="md:text-[14px] text-[12px] text-[#7F8798] mt-[8px]">
+                      Amount: 32,236.77
+                    </p>
+                  </div>
+                </div>
 
-      {/* Stay Token Section */}
-      <div className="py-4">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            {/* Icon */}
-            <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center">
-              {/* Stay Icon Placeholder */}
-              <span className="text-white font-bold">ST</span>
+                {/* Progress Bar */}
+                <div className="flex gap-[18px] items-center pt-[20px]">
+                  <div className="overflow-hidden w-full h-[7px] text-xs flex rounded-full bg-[#A0A3AA] bg-opacity-[0.2]">
+                    <div
+                      style={{ width: "30%" }}
+                      className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#0C0839] rounded-full"
+                    ></div>
+                  </div>
+                  <div className="text-[14px] leading-[17.64px] font-[500] text-[#01060F]">
+                    30%
+                  </div>
+                </div>
+              </div>
             </div>
-            {/* Text */}
-            <div>
-              <h3 className="text-sm font-semibold text-gray-800">Stay</h3>
-              <p className="text-xs text-purple-600">Current Price: $0.00014</p>
-            </div>
-          </div>
-          {/* Amount */}
-          <div className="text-right">
-            <h3 className="text-lg font-bold text-gray-800">$0</h3>
-            <p className="text-xs text-gray-400">Amount: 0</p>
           </div>
         </div>
-        {/* Progress Bar */}
-        <div className="relative pt-2">
-          <div className="overflow-hidden h-2 text-xs flex rounded bg-gray-200">
-            <div
-              style={{ width: "0%" }}
-              className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-600"
-            ></div>
+
+        {/* LP Token Section */}
+        <div className="border-b border-b-[#A0A3AA] py-[40px]">
+          <div className="flex justify-between items-center">
+            <div className="flex items-start gap-[10px] w-full">
+              {/* Icon */}
+              <div className="flex space-x-[-17px]">
+                <div className="min-w-[42px] min-h-[42px] w-[42px] h-[42px] text-white bg-custom-one rounded-full flex items-center justify-center">
+                  <img className="h-full w-full" src="/assets/icons/usdc.svg" />
+                </div>
+                <div className="min-w-[42px] min-h-[42px] w-[42px] h-[42px] text-white bg-custom-one rounded-full flex items-center justify-center">
+                  <img className="h-full w-full" src="/assets/icons/stay.svg" />
+                </div>
+              </div>
+              {/* Text */}
+              <div className="flex flex-col w-full">
+                <div className="flex flex-wrap gap-[4px] justify-between items-center">
+                  <div>
+                    <div className="flex items-center gap-[6px]">
+                      <h3 className="text-[18px] leading-[22.68px] font-[600] text-primary-color">
+                        LP Token
+                      </h3>
+                      <span className="bg-[#0C083917] rounded-full">
+                        <p className="text-[12px] leading-[15.12px] py-[6px] px-[10px] font-[500] text-[#01060F]">
+                          0 stacked
+                        </p>
+                      </span>
+                    </div>
+                    <p className="md:text-[14px] text-[12px] leading-[17.64px] font-[500] text-[#9945FF] mt-[8px]">
+                      Current Price: $2.18
+                    </p>
+                  </div>
+
+                  {/* Amount */}
+                  <div className="sm:text-right">
+                    <h3 className="md:text-[20px] text-[18px] font-[700] leading-[26.46px] text-[#01060F]">
+                      $0
+                    </h3>
+                    <p className="md:text-[14px] text-[12px] text-[#7F8798] mt-[8px]">
+                      Amount: 0
+                    </p>
+                  </div>
+                </div>
+
+                {/* Progress Bar */}
+                <div className="flex gap-[18px] items-center pt-[15px]">
+                  <div className="overflow-hidden w-full h-[7px] text-xs flex rounded-full bg-[#A0A3AA] bg-opacity-[0.2]">
+                    <div
+                      style={{ width: "1.3%" }}
+                      className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#0C0839] rounded-full"
+                    ></div>
+                  </div>
+                  <div className="text-[14px] leading-[17.64px] font-[500] text-[#01060F]">
+                    00%
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="text-sm text-gray-400 mt-2">0%</div>
+        </div>
+
+        {/* Stay Token Section */}
+        <div className="py-[40px]">
+          <div className="flex justify-between items-center">
+            <div className="flex items-start gap-[10px] w-full">
+              {/* Icon */}
+              <div className="min-w-[42px] min-h-[42px] w-[42px] h-[42px] text-white rounded-full flex items-center justify-center">
+                <img className="h-full w-full" src="/assets/icons/stay.svg" />
+              </div>
+              {/* Text */}
+              <div className="flex flex-col w-full">
+                <div className="flex flex-wrap gap-[4px] justify-between items-center">
+                  <div>
+                    <div className="flex items-center gap-[6px]">
+                      <h3 className="text-[18px] leading-[22.68px] font-[600] text-primary-color">
+                        Stay
+                      </h3>
+                      <span className="bg-[#0C083917] rounded-full">
+                        <p className="text-[12px] leading-[15.12px] py-[6px] px-[10px] font-[500] text-[#01060F]">
+                          0 stacked
+                        </p>
+                      </span>
+                    </div>
+                    <p className="md:text-[14px] text-[12px] leading-[17.64px] font-[500] text-[#9945FF] mt-[8px]">
+                      Current Price: $0.00014
+                    </p>
+                  </div>
+
+                  {/* Amount */}
+                  <div className="sm:text-right">
+                    <h3 className="md:text-[20px] text-[18px] font-[700] leading-[26.46px] text-[#01060F]">
+                      $0
+                    </h3>
+                    <p className="md:text-[14px] text-[12px] text-[#7F8798] mt-[8px]">
+                      Amount: 0
+                    </p>
+                  </div>
+                </div>
+
+                {/* Progress Bar */}
+                <div className="flex gap-[18px] items-center pt-[15px]">
+                  <div className="overflow-hidden w-full h-[7px] text-xs flex rounded-full bg-[#A0A3AA] bg-opacity-[0.2]">
+                    <div
+                      style={{ width: "1.3%" }}
+                      className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#0C0839] rounded-full"
+                    ></div>
+                  </div>
+                  <div className="text-[14px] leading-[17.64px] font-[500] text-[#01060F]">
+                    00%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
