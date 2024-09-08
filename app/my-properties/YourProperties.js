@@ -57,7 +57,7 @@ const YourProperties = () => {
 
           <div className="px-[12px] py-[20px] md:px-[20px] flex flex-col gap-[15px] justify-between">
             <div className="flex items-end flex-wrap gap-[15px]">
-              <div className="flex-grow w-[66.6%]">
+              <div className="flex-grow lg:w-[66.6%] w-full">
                 <div className="flex items-center gap-[5px]">
                   <span className="w-[18px] h-[18px] mt-[-2px]">
                     <HiMapPin size={18} color="#954AFC" />
@@ -66,11 +66,11 @@ const YourProperties = () => {
                     Manchester, United Kingdom
                   </p>
                 </div>
-                <div className="flex gap-[15px] w-full">
-                  <h2 className="text-[#0C0839] text-[18px] sm:text-[21px] sm:leading-[29px] font-bold mt-[5px] border-r-2 border-black border-opacity-[0.1] w-[55%]">
+                <div className="flex sm:flex-row flex-col gap-[15px] w-full">
+                  <h2 className="text-[#0C0839] text-[18px] sm:text-[21px] sm:leading-[29px] font-bold mt-[5px] sm:border-r-2 sm:border-black sm:border-opacity-[0.1] lg:w-[55%] sm:w-[60%]">
                     Beautiful 5-Bedroom Villa near the Beach
                   </h2>
-                  <div className="flex flex-col gap-[4px] text-start w-[45%]">
+                  <div className="flex flex-col gap-[4px] text-start lg:w-[45%] sm:w-[40%]">
                     <p className="text-[14px] leading-[21px] font-[500] text-primary-color">
                       Property Starting Price
                     </p>
@@ -80,7 +80,7 @@ const YourProperties = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-[15px] items-center justify-end w-[31%]">
+              <div className="lg:flex hidden gap-[15px] items-center justify-end w-[31%]">
                 <button className="bg-white border border-primary-color text-primary-color w-[102px] h-[41px] p-[10px] rounded-full text-[16px] leading-[20.16px] font-[600]">
                   Sell
                 </button>
@@ -88,6 +88,14 @@ const YourProperties = () => {
                   Vote Now
                 </button>
               </div>
+            </div>
+            <div className="lg:hidden flex gap-[15px] w-full items-center justify-end">
+              <button className="bg-white border border-primary-color text-primary-color w-[102px] h-[41px] p-[10px] rounded-full text-[16px] leading-[20.16px] font-[600]">
+                Sell
+              </button>
+              <button className="w-[126px] h-[41px] p-[10px] rounded-full bg-[#0C0839] border border-[#0C0839] text-white text-[16px] leading-[20.16px] font-[600]">
+                Vote Now
+              </button>
             </div>
           </div>
         </div>
